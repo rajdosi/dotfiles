@@ -20,7 +20,7 @@ alias lc="colorls"
 # https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config#falkors-configuration
 # https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config#sudhindras-config
 
-# Common settings
+# Common settings - https://github.com/bhilburn/powerlevel9k
 POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
@@ -36,10 +36,12 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv anaconda disk_usage time r
 # icons - https://framagit.org/phineas0fog/dotfiles/blob/51385cb0d9ff4b244ecd0293a49c189b1352c1c4/custom/themes/powerlevel9k/functions/icons.zsh
 OS_ICON="\uf302"
 POWERLEVEL9K_HOME_ICON="\uf015"
+POWERLEVEL9K_HOME_SUB_ICON="\uf015"
 POWERLEVEL9K_FOLDER_ICON="\uf752"
 POWERLEVEL9K_DISK_ICON="\uf0a0"
 POWERLEVEL9K_RAM_ICON="\uf0e4"
 POWERLEVEL9K_VCS_GIT_ICON="\uf408"
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON="\uf408"
 POWERLEVEL9K_VCS_UNTRACKED_ICON="\uf540"
 
 # OS settings
@@ -48,12 +50,12 @@ POWERLEVEL9K_OS_ICON_FOREGROUND="white"
 
 # Username and hostname context
 POWERLEVEL9K_CONTEXT_TEMPLATE="%n@%m"
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
-POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="35"
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="214"
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="24"
 
 # Writable dir settings
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="214"
-POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND="24"
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND="6"
 
 # Directory truncation settings
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_unique"
