@@ -122,44 +122,12 @@ POWERLEVEL9K_STATUS_ERROR_FOREGROUND="red"
 autoload -Uz compinit && compinit
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/opt/android-sdk/bin
-export PATH=$HOME/.rbenv/shims:$PATH
-export PATH=$HOME/.toolbox/bin:$PATH
 export PATH=$PATH:/usr/local/bin/
 export PATH=$PATH:~/bin
-export PATH=$PATH:~/miniconda3/bin
 
-export JAVA_HOME=$(/usr/libexec/java_home)
-export ANDROID_HOME=/usr/local/opt/android-sdk
-export GK_INSTALL_DIR=/Users/rajdosi/gordianknot
-
-source /Users/rajdosi/requiredscripts/create-gk-aliases.sh
-
-alias odin="tabname odin;ssh -L 2009:localhost:2009 dev-dsk-pkunal-2b-i-024a1bc5.us-west-2.amazon.com"
 alias ccat="pygmentize -g"
 
-alias bb=brazil-build
-alias bba='brazil-build apollo-pkg'
-alias bbr='brazil-build release'
-alias bbs='brazil-build server'
-alias bre='brazil-runtime-exec'
-alias brc='brazil-recursive-cmd'
-alias bws='brazil ws'
-alias bwsuse='bws use --gitMode -p'
-alias bwscreate='bws create -n'
-alias brc=brazil-recursive-cmd
-alias bbr='brc brazil-build'
-alias bball='brc --allPackages'
-alias bbb='brc --allPackages brazil-build'
-alias bbra='bbr apollo-pkg'
-
 alias sshc='ssh -o ProxyCommand=none'
-alias dbconnect='ssh -L 60199:fss1na-orasvr.db.amazon.com:60199 finops-tech-pc-ams-m4large-1a-52005eaa.us-east-1.amazon.com'
-alias debug_pcw='ssh -L 8015:localhost:8015 rajdosi@rajdosi.aka.corp.amazon.com'
-
-alias selenium-server="java -jar /Users/pkunal/Documents/selenium-server-standalone-2.50.1.jar -Dwebdriver.chrome.driver=/Users/pkunal/Documents/chromedriver"
-alias appium-server-22="tabname appium;appium --automation-name=Selendroid --device-name=04157df4aab8343c --browser-name=Chrome  --platform-name=Android --address=127.0.0.1 --port=4444 --platform-version=22"
-alias appium-server-19="tabname appium;appium --automation-name=Selendroid --device-name=04157df4aab8343c --browser-name=Chrome  --platform-name=Android --address=127.0.0.1 --port=4444 --platform-version=19"
 
 alias sz='source ~/.zshrc'
 
@@ -167,3 +135,16 @@ precmd() {
   # sets the tab title to current dir
   echo -ne "\e]1;${PWD##*/}\a"
 }
+
+checkglobalizedvip() {
+  (nslookup $1-$2.$2.proxy.amazon.com &&
+  nslookup $1-$2.$2.x-region.amazon.com &&
+  host $1-$2.$2.proxy.amazon.com &&
+  host $1-$2.$2.x-region.amazon.com &&
+  echo GLOBALIZED VIP CHECKS PASS) ||
+    echo LAST GLOBALIZED VIP CHECK FAILED
+
+  echo THE FOLLOWING WILL ONLY PASS IF SCRIPT IS RUN INSIDE THE HOST REGION
+  host $1.$2.amazon.com
+}
+export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
