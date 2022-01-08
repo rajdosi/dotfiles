@@ -1,4 +1,5 @@
-# https://medium.com/@oldwestaction/beautifying-your-terminal-with-zsh-prezto-powerlevel9k-9e8de2023046
+# Blog - https://josephinegyamera.medium.com/customizing-your-zhs-terminal-with-prezto-powerlevel10k-505d87820e5f
+# Fonts - https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -6,13 +7,19 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Syntax highlighting
+# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+# Install using homebrew
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Auto suggestions
+# https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+# Install using homebrew
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=243"
 
 # colorls
+# https://github.com/athityakumar/colorls
+# Install using ruby gem
 source $(dirname $(gem which colorls))/tab_complete.sh
 alias lc="colorls"
 
